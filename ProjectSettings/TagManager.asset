@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Breakable
   - Unbreakable
-  - UltimoNivel
   - PowerUp
+  - LastLevel
   layers:
   - Default
   - TransparentFX
