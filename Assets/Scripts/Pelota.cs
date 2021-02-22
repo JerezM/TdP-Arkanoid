@@ -7,7 +7,6 @@ public class Pelota : MonoBehaviour {
 	[SerializeField] float xPush = 2f;
 	[SerializeField] float yPush = 15f;
 	[SerializeField] AudioClip clip = null;
-	[SerializeField] float randomFactor = 0.2f;
 
 	Vector2 paddleToBallVector;
 	bool hasStarted = false;
@@ -47,12 +46,33 @@ public class Pelota : MonoBehaviour {
 
 	//If the game began, when the ball hit something will reproduce a sound.
 	private void OnCollisionEnter2D(Collision2D collision) {
-		Vector2 velocityTweak = new Vector2(Random.Range(0f, randomFactor), Random.Range(0f, randomFactor)); //this is used to avoid the ball bug and keep hitting in the same line
 
 		if (hasStarted) {
 			myAudioSource.PlayOneShot(clip);
-			myRigidbody2D.velocity += velocityTweak;
+
+			// Hit the Racket?
+			if ( collision.gameObject.name == "Paleta") {
+				// Calculate hit Factor
+				float x = HitFactor(transform.position, collision.transform.position,
+								    collision.collider.bounds.size.x);
+
+				// Calculate direction, set length to yPush to keep the same "speed"
+				Vector2 dir = new Vector2(x, 1) * yPush;
+
+				// Set Velocity with dir
+				myRigidbody2D.velocity = dir;
+			}
 		}
 
+	}
+
+	//Calculates where the ball hits the racket
+	private float HitFactor(Vector2 ballPos, Vector2 racketPos, float racketWidth) {
+		// ascii art:
+		//
+		// -1  -0.5  0  0.5   1  <- x value
+		// ===================  <- racket
+		//
+		return (ballPos.x - racketPos.x) / racketWidth;
 	}
 }
