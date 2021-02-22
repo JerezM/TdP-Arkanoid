@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af814f9eefa6e1a459a13c87c456db46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonido: {fileID: 8300000, guid: ab4aa53c1fd23234d949c43813a017a3, type: 3}
   hitSprites:
   - {fileID: 21300000, guid: 2420285f7bd7c7a40ae23d530566c075, type: 3}
-  puntos: 50
+  points: 50
