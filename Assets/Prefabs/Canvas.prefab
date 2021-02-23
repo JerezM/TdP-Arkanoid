@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 6863565998076111409}
   - component: {fileID: 1100078118542675079}
   m_Layer: 5
-  m_Name: Nivel text
+  m_Name: Level text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nivel '
+  m_text: Round
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ab4bbc124ba5fa4abdb714813c2f6e0, type: 2}
   m_sharedMaterial: {fileID: -6211472446241793831, guid: 4ab4bbc124ba5fa4abdb714813c2f6e0,
@@ -391,9 +391,9 @@ MonoBehaviour:
   m_margin: {x: -360.57336, y: 0, z: 0, w: -117.571045}
   m_textInfo:
     textComponent: {fileID: 1100078118542675079}
-    characterCount: 6
+    characterCount: 5
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 1
     linkCount: 0
     lineCount: 1
